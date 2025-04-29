@@ -1,0 +1,25 @@
+.g--shadow {
+    @each $name, $size in $shadow {
+        &-box-#{$name}{
+            @include box-shadow(var(--shadow-#{$name}))
+        }
+        &-text-#{$name}{
+            text-shadow: var(--shadow-#{$name});
+        }
+    }
+}
+
+@each $breakpoint-key, $breakpoint-value in $breakpoints {
+    @media (min-width: #{$breakpoint-value}) {
+        .g--shadow {
+            @each $name, $size in $shadow {
+                &-box-#{$name}#{$separator}#{$breakpoint-key} {
+                    @include box-shadow(var(--shadow-#{$name}));
+                }
+                &-text-#{$name}#{$separator}#{$breakpoint-key} {
+                    text-shadow: var(--shadow-#{$name});
+                }
+            }
+        }
+    }
+}

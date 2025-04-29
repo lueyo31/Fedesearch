@@ -1,0 +1,31 @@
+@if (isVisible && result.type.name === 'image' && type === 'images') {
+<dialog class="c-image-view" open="true">
+  <div class="c-image-view__content">
+    <button class="c-image-view__close" (click)="closeDialog()">×</button>
+    <img [src]="result?.link" [alt]="result?.title" />
+    <p class="c-image-view__title">
+      <a [href]="result?.link" target="_blank">{{ result?.title }}</a>
+    </p>
+  </div>
+</dialog>
+}
+@if (isVisible && result.type.name === 'video' && type === 'videos') {
+<dialog class="c-image-view" open="true">
+  <div class="c-image-view__content">
+    <button class="c-image-view__close" (click)="closeDialog()">×</button>
+
+    @if (!isVideoPlaying) {
+    <img [src]="result?.type?.thumbnail" alt="Video preview" />
+    <div class="c-image-view__overlay" (click)="playVideo()">
+      <p>Click to play video</p>
+    </div>
+    }
+    @if (isVideoPlaying) {
+    <iframe [src]="safeUrl" allowfullscreen></iframe>
+    }
+    <p class="c-image-view__title">
+      <a [href]="result?.type?.embedUrl" target="_blank">{{ result?.title }}</a>
+    </p>
+  </div>
+</dialog>
+}

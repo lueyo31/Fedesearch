@@ -1,0 +1,5 @@
+quiero que hagas los mediaqueries externos, osea después de este codigo quiero que lo repitas para todos los tamaños de pantalla que aparecen en las variables-sass y se aplique a cada tamaño
+
+este sería un ejemplo en otro componente que nada que ver, tienes que hacerlo con todos los atributos que aparecen en este archivo de globales
+
+@each $breakpoint-key, $breakpoint-value in $breakpoints { @media (min-width: #{$breakpoint-value}) { @for $i from 1 to 11 { &--duration-#{$i}#{$separator}#{$breakpoint-key} { animation-duration: #{$i}s; } } @each $velocidad-value in $velocidad { &--timing-#{$velocidad-value}#{$separator}#{$breakpoint-key} { animation-timing-function: #{$velocidad-value}; } } }

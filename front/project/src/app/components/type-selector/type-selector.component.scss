@@ -1,0 +1,35 @@
+.c-select-type {
+  --c-select-type-element-color: var(--color-white);
+  --c-select-type-element-background-color: var(--color-black-3);
+  --c-select-type-element-hover-background-color: var(--color-black-2);
+  --c-select-type-element-padding: var(--padding-5);
+  --c-select-type-element-border-bottom-width: var(--border-width-2);
+  --c-select-type-element-border-bottom-color: var(--color-alternative);
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0;
+
+  &__element {
+    color: var(--c-select-type-element-color);
+    background-color: var(--c-select-type-element-background-color);
+    flex: 1 1 calc(100% / 4); // Default to one-fourth width
+    text-align: center;
+    padding: var(--c-select-type-element-padding);
+    border: none;
+    border-bottom: none; // Ensure no conflicting border styles
+    box-sizing: border-box; // Include border in element's dimensions
+    cursor: pointer;
+    transition: border-bottom 0.3s ease;
+
+    &:hover {
+      background-color: var(--c-select-type-element-hover-background-color);
+    }
+
+    &--selected {
+      border-bottom: var(--c-select-type-element-border-bottom-width) solid
+        var(--c-select-type-element-border-bottom-color);
+    }
+  }
+}

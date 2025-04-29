@@ -1,0 +1,70 @@
+.c-search-bar {
+  --c-search-bar-background-color: var(--background-color-black-3);
+  --c-search-bar-padding: var(--padding-5);
+  --c-search-bar-border-radius: var(--border-radius-2);
+  --c-search-bar-shadow: var(--shadow-3);
+  --c-search-bar-input-background-color: var(--background-color-black-4);
+  --c-search-bar-input-color: var(--color-white);
+  --c-search-bar-input-padding: var(--padding-5);
+  --c-search-bar-input-height: 40px;
+  --c-search-bar-input-font-size: var(--font-size-m);
+  --c-search-bar-button-background-color: var(--color-primary-3);
+  --c-search-bar-button-hover-background-color: var(--color-primary-4);
+  --c-search-bar-button-color: var(--color-white);
+  --c-search-bar-button-padding: var(--padding-3) var(--padding-4);
+  --c-search-bar-button-margin-left: var(--padding-2);
+  --c-search-bar-button-font-size: var(--font-size-m);
+  --c-search-bar-settings-container-height: 40px;
+  --c-search-bar-settings-hover-scale: 1.15;
+  --c-search-bar-settings-hover-transition: scale 0.3s ease-in-out 0.1s;
+
+  display: flex;
+  align-items: center;
+  background-color: var(--c-search-bar-background-color);
+  padding: var(--c-search-bar-padding);
+  border-radius: var(--c-search-bar-border-radius);
+  box-shadow: var(--c-search-bar-shadow);
+
+  &__input {
+    flex: 1;
+    background-color: var(--c-search-bar-input-background-color);
+    color: var(--c-search-bar-input-color);
+    border: none;
+    padding: var(--c-search-bar-input-padding);
+    border-radius: var(--c-search-bar-border-radius);
+    outline: none;
+    font-size: var(--c-search-bar-input-font-size);
+    height: var(--c-search-bar-input-height);
+    line-height: var(--c-search-bar-input-height);
+  }
+
+  &__button {
+    background-color: var(--c-search-bar-button-background-color);
+    color: var(--c-search-bar-button-color);
+    border: none;
+    padding: var(--c-search-bar-button-padding);
+    margin-left: var(--c-search-bar-button-margin-left);
+    border-radius: var(--c-search-bar-border-radius);
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: var(--c-search-bar-button-font-size);
+    height: 100%;
+    line-height: var(--c-search-bar-input-height);
+
+    &:hover {
+      background-color: var(--c-search-bar-button-hover-background-color);
+    }
+  }
+
+  &__settings-container {
+    height: var(--c-search-bar-settings-container-height);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      scale: var(--c-search-bar-settings-hover-scale);
+      transition: var(--c-search-bar-settings-hover-transition);
+    }
+  }
+}

@@ -1,0 +1,25 @@
+<div class="c-update-url">
+  Update API URL
+  <div class="c-update-url__input-group">
+    <input
+      class="c-update-url__input"
+      type="text"
+      [placeholder]="'Enter new API URL ' + currentUrl"
+      [(ngModel)]="inputValue"
+    />
+    <button class="c-update-url__button" (click)="updateUrl()">
+      Update URL
+    </button>
+  </div>
+  <div class="c-update-url__status">
+    @if(urlUpdated) {
+    <p class="c-update-url__message">
+      URL updated successfully!
+    </p>
+  }
+    <p class="c-update-url__current">
+      <span class="c-update-url__current-text">Current URL: </span>
+      <a class="c-update-url__current-value" href="{{ currentUrl }}">{{ currentUrl }}</a>
+    </p>
+  </div>
+</div>

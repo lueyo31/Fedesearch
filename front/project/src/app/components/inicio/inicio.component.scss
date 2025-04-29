@@ -1,0 +1,46 @@
+.c-inicio {
+  --c-inicio-height: 100vh;
+  --c-inicio-background-color: rgba(0, 0, 0, 0);
+  --c-inicio-logo-max-width: var(--width-800);
+  --c-inicio-logo-min-width: var(--width-300);
+  --c-inicio-logo-border-radius: var(--border-radius-1);
+  --c-inicio-search-bar-width: 80%;
+  --c-inicio-search-bar-max-width: var(--width-900);
+  --c-inicio-search-bar-min-width: var(--width-350);
+  --c-inicio-settings-margin-top: var(--margin-6);
+  --c-inicio-settings-gap: var(--padding-4);
+
+  height: var(--c-inicio-height);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--c-inicio-background-color);
+
+  &__image-container {
+    margin-bottom: var(--c-inicio-settings-margin-top);
+    // Add logo or image styles here if needed
+  }
+
+  &__logo {
+    max-width: var(--c-inicio-logo-max-width);
+    min-width: var(--c-inicio-logo-min-width);
+    border-radius: var(--c-inicio-logo-border-radius);
+    width: 100%;
+    height: auto;
+  }
+
+  &__search-bar-container {
+    width: var(--c-inicio-search-bar-width);
+    max-width: var(--c-inicio-search-bar-max-width);
+    min-width: var(--c-inicio-search-bar-min-width);
+  }
+
+  &__settings-container {
+    margin-top: var(--c-inicio-settings-margin-top);
+    gap: var(--c-inicio-settings-gap);
+    display: flex;
+    justify-content: center;
+    // Add settings button styles here if needed
+  }
+}

@@ -1,0 +1,15 @@
+@each $name, $size in $height {
+    .g--height-#{$name} {
+        height: var(--height-#{$name});
+    }
+}
+
+@each $breakpoint-key, $breakpoint-value in $breakpoints {
+    @media (min-height: #{$breakpoint-value}) {
+        @each $name, $size in $height {
+            .g--height-#{$name}#{$separator}#{$breakpoint-key} {
+                height: var(--height-#{$name});
+            }
+        }
+    }
+}

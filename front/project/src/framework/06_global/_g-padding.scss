@@ -1,0 +1,75 @@
+.g--padding {
+    @each $key, $value in $padding {
+        &-#{$key} {
+            padding: var(--padding-#{$key});
+        }
+    }
+
+    @each $key, $value in $padding {
+        &-top-#{$key} {
+            padding-top: var(--padding-#{$key});
+        }
+
+        &-bottom-#{$key} {
+            padding-bottom: var(--padding-#{$key});
+        }
+
+        &-right-#{$key} {
+            padding-right: var(--padding-#{$key});
+        }
+
+        &-left-#{$key} {
+            padding-left: var(--padding-#{$key});
+        }
+
+        &-horizontal-#{$key} {
+            padding-right: var(--padding-#{$key});
+            padding-left: var(--padding-#{$key});
+        }
+
+        &-vertical-#{$key} {
+            padding-top: var(--padding-#{$key});
+            padding-bottom: var(--padding-#{$key});
+        }
+    }
+}
+
+@each $breakpoint-key, $breakpoint-value in $breakpoints {
+    @media (min-width: #{$breakpoint-value}) {
+        .g--padding {
+            @each $key, $value in $padding {
+                &-#{$key}#{$separator}#{$breakpoint-key} {
+                    padding: var(--padding-#{$key});
+                }
+            }
+
+            @each $key, $value in $padding {
+                &-top-#{$key}#{$separator}#{$breakpoint-key} {
+                    padding-top: var(--padding-#{$key});
+                }
+
+                &-bottom-#{$key}#{$separator}#{$breakpoint-key} {
+                    padding-bottom: var(--padding-#{$key});
+                }
+
+                &-right-#{$key}#{$separator}#{$breakpoint-key} {
+                    padding-right: var(--padding-#{$key});
+                }
+
+                &-left-#{$key}#{$separator}#{$breakpoint-key} {
+                    padding-left: var(--padding-#{$key});
+                }
+
+                &-horizontal-#{$key}#{$separator}#{$breakpoint-key} {
+                    padding-right: var(--padding-#{$key});
+                    padding-left: var(--padding-#{$key});
+                }
+
+                &-vertical-#{$key}#{$separator}#{$breakpoint-key} {
+                    padding-top: var(--padding-#{$key});
+                    padding-bottom: var(--padding-#{$key});
+                }
+            }
+        }
+    }
+}

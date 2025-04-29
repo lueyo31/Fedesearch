@@ -1,0 +1,70 @@
+<div
+  class="c-search-container"
+  style="min-height: 100vh; display: flex; flex-direction: column"
+>
+  <div class="c-header-search g--background-black-3">
+    <div class="c-header-search__logo-container" [routerLink]="['/']">
+      <img
+        src="logocuadradosinfondo.png"
+        alt="Logo"
+        class="c-header-search__logo-square"
+      />
+    </div>
+    <app-search-bar></app-search-bar>
+  </div>
+  <app-type-selector></app-type-selector>
+  @if (isLoading) {
+  <app-loading-animation></app-loading-animation>
+  } @if (hasError) {
+  <p class="c-results__error">Ocurrió un error al cargar los resultados.</p>
+  <app-update-url-bar> </app-update-url-bar>
+  } @if (page && !isLoading && !hasError) {
+  <div class="c-results g--background-black-3">
+    <h2 class="c-results__title">Search Results - Page {{ page.page }}</h2>
+    @if (page.results[0]?.type?.name === 'image') {
+    <div class="c-results__grid c-results__grid-images">
+      @for (result of page.results; track result) {
+      <app-result-element [result]="result"></app-result-element>
+      }
+    </div>
+    } @if (page.results[0]?.type?.name === 'video') {
+    <div class="c-results__grid c-results__grid-videos">
+      @for (result of page.results; track result) {
+      <app-result-element [result]="result"></app-result-element>
+      }
+    </div>
+    } @if (page.results[0]?.type?.name === 'web') {
+    <div class="c-results__list">
+      @for (result of page.results; track result) {
+      <app-result-element
+        [result]="result"
+        class="c-results__list-item"
+      ></app-result-element>
+      }
+    </div>
+    } @if (page.results[0]?.type?.name === 'new') {
+    <div class="c-results__list">
+      @for (result of page.results; track result) {
+      <app-result-element
+        [result]="result"
+        class="c-results__list-item"
+      ></app-result-element>
+      }
+    </div>
+    }
+    <div class="c-pagination">
+      <button
+        class="c-pagination__button"
+        [disabled]="page.page <= 1"
+        (click)="changePage(page, -1)"
+      >
+        &lt;
+      </button>
+      <button class="c-pagination__button" (click)="changePage(page, 1)">
+        &gt;
+      </button>
+    </div>
+  </div>
+  <app-image-view></app-image-view>
+  }
+</div>

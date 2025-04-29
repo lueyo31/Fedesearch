@@ -1,0 +1,72 @@
+<div class="c-config-menu">
+  <div class="c-config-menu__header">
+    <span class="c-config-menu__logo"
+      ><img
+        src="logocuadradosinfondo.png"
+        alt="Logo"
+        height="100px"
+        [routerLink]="['/']"
+    /></span>
+    <h1 class="c-config-menu__title">Configuración</h1>
+  </div>
+  <app-update-url-bar></app-update-url-bar>
+  <p class="c-config-menu__description">Update config</p>
+
+
+  <div class="c-config-menu__inputs">
+    <div class="c-config-menu__inputs-group">
+      <label for="language" class="c-config-menu__label">Language:</label>
+      <select
+        id="language"
+        class="c-config-menu__select"
+        [(ngModel)]="config.language"
+      >
+        <option value="" disabled [selected]="!config.language">
+          Selecciona un idioma de búsqueda
+        </option>
+        @for(lang of languages; track lang.code) {
+        <option [value]="lang.code" [selected]="config.language === lang.code">
+          {{ lang.name }}
+        </option>
+        }
+      </select>
+      <button class="c-config-menu__button" (click)="updateConfig('language')">
+        Update Language
+      </button>
+    </div>
+    <div class="c-config-menu__inputs-group">
+      <label for="safesearch" class="c-config-menu__label">Safe Search:</label>
+      <select
+        id="safesearch"
+        class="c-config-menu__select"
+        [(ngModel)]="config.safesearch"
+      >
+        <option value="" disabled [selected]="config.safesearch === undefined">
+          Búsqueda segura
+        </option>
+        <option [value]="0" [selected]="config.safesearch === 0">No</option>
+        <option [value]="1" [selected]="config.safesearch === 1">
+          Moderada
+        </option>
+        <option [value]="2" [selected]="config.safesearch === 2">
+          Estricta
+        </option>
+      </select>
+      <button
+        class="c-config-menu__button"
+        (click)="updateConfig('safesearch')"
+      >
+        Update Safe Search
+      </button>
+    </div>
+  </div>
+  @if(successMessage){
+    <p class="c-config-menu__success-message">
+      {{ successMessage }}
+    </p>}
+    @if(errorMessage){
+    <p class="c-config-menu__error-message">
+      {{ errorMessage }}
+
+    </p>}
+</div>

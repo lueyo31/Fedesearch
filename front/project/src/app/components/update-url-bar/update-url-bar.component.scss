@@ -1,0 +1,94 @@
+.c-update-url {
+  --c-update-url-gap: 1rem;
+  --c-update-url-padding: 1.5rem;
+  --c-update-url-background-color: var(--color-black-4);
+  --c-update-url-border-radius: var(--border-radius-2);
+  --c-update-url-box-shadow: var(--shadow-3);
+  --c-update-url-color: var(--color-white-9);
+  --c-update-url-input-gap: 0.5rem;
+  --c-update-url-input-padding: 0.5rem;
+  --c-update-url-input-border-color: var(--color-grey-4);
+  --c-update-url-input-border-radius: var(--border-radius-1);
+  --c-update-url-input-font-size: var(--font-size);
+  --c-update-url-input-background-color: var(--color-black-3);
+  --c-update-url-input-color: var(--color-white);
+  --c-update-url-input-focus-border-color: var(--color-primary-4);
+  --c-update-url-input-focus-box-shadow: 0 0 5px var(--color-primary-4);
+  --c-update-url-button-padding: 0.5rem 1rem;
+  --c-update-url-button-background-color: var(--color-primary-4);
+  --c-update-url-button-hover-background-color: var(--color-primary-5);
+  --c-update-url-button-color: var(--color-white);
+  --c-update-url-button-border-radius: var(--border-radius-1);
+  --c-update-url-button-font-size: var(--font-size);
+  --c-update-url-status-gap: 0.5rem;
+  --c-update-url-message-color: var(--color-green-4);
+  --c-update-url-message-font-weight: bold;
+  --c-update-url-current-color: var(--color-white);
+  --c-update-url-current-value-font-weight: bold;
+  --c-update-url-current-value-color: var(--color-primary-4);
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--c-update-url-gap);
+  padding: var(--c-update-url-padding);
+  background-color: var(--c-update-url-background-color);
+  border-radius: var(--c-update-url-border-radius);
+  box-shadow: var(--c-update-url-box-shadow);
+  color: var(--c-update-url-color);
+
+  &__input-group {
+    display: flex;
+    gap: var(--c-update-url-input-gap);
+  }
+
+  &__input {
+    flex: 1;
+    padding: var(--c-update-url-input-padding);
+    border: 1px solid var(--c-update-url-input-border-color);
+    border-radius: var(--c-update-url-input-border-radius);
+    font-size: var(--c-update-url-input-font-size);
+    background-color: var(--c-update-url-input-background-color);
+    color: var(--c-update-url-input-color);
+  }
+
+  &__input:focus {
+    outline: none;
+    border-color: var(--c-update-url-input-focus-border-color);
+    box-shadow: var(--c-update-url-input-focus-box-shadow);
+  }
+
+  &__button {
+    padding: var(--c-update-url-button-padding);
+    background-color: var(--c-update-url-button-background-color);
+    color: var(--c-update-url-button-color);
+    border: none;
+    border-radius: var(--c-update-url-button-border-radius);
+    font-size: var(--c-update-url-button-font-size);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  &__button:hover {
+    background-color: var(--c-update-url-button-hover-background-color);
+  }
+
+  &__status {
+    display: flex;
+    flex-direction: column;
+    gap: var(--c-update-url-status-gap);
+  }
+
+  &__message {
+    color: var(--c-update-url-message-color);
+    font-weight: var(--c-update-url-message-font-weight);
+  }
+
+  &__current {
+    color: var(--c-update-url-current-color);
+  }
+
+  &__current-value {
+    font-weight: var(--c-update-url-current-value-font-weight);
+    color: var(--c-update-url-current-value-color);
+  }
+}

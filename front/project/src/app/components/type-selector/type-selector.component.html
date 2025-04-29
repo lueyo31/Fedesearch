@@ -1,0 +1,12 @@
+<div class="c-select-type">
+  @for(type of types; track type) {
+  <button
+    (click)="selectType(type)"
+    class="c-select-type__element {{
+      type === selectedType ? 'c-select-type__element--selected' : ''
+    }}"
+  >
+    {{ capitalizeFirstLetter(type) }}
+  </button>
+  }
+</div>

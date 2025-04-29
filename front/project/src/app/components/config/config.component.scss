@@ -1,0 +1,133 @@
+.c-config-menu {
+  --c-config-menu-gap: 2rem;
+  --c-config-menu-background-color: var(--color-black-4);
+  --c-config-menu-padding: 2rem;
+  --c-config-menu-border-radius: 0.5rem;
+  --c-config-menu-min-height: 100vh;
+  --c-config-menu-color: var(--color-white-9);
+  --c-config-menu-header-padding-bottom: 1.5rem;
+  --c-config-menu-header-border-color: var(--color-grey-6);
+  --c-config-menu-title-font-size: 1.5rem;
+  --c-config-menu-title-font-weight: bold;
+  --c-config-menu-title-color: var(--color-white-9);
+  --c-config-menu-inputs-gap: 2rem;
+  --c-config-menu-inputs-group-gap: 1.5rem;
+  --c-config-menu-label-font-size: 1rem;
+  --c-config-menu-label-font-weight: bold;
+  --c-config-menu-label-color: var(--color-white-8);
+  --c-config-menu-select-padding: 0.8rem;
+  --c-config-menu-select-border-color: var(--color-grey-5);
+  --c-config-menu-select-border-radius: 0.3rem;
+  --c-config-menu-select-background-color: var(--color-black-3);
+  --c-config-menu-select-color: var(--color-white-9);
+  --c-config-menu-select-font-size: 0.9rem;
+  --c-config-menu-select-focus-outline: 0.2rem solid var(--color-primary-3);
+  --c-config-menu-button-padding: 0.8rem 1.2rem;
+  --c-config-menu-button-background-color: var(--color-primary-3);
+  --c-config-menu-button-hover-background-color: var(--color-primary-2);
+  --c-config-menu-button-active-background-color: var(--color-primary-1);
+  --c-config-menu-button-border-radius: 0.3rem;
+  --c-config-menu-button-font-size: 0.9rem;
+  --c-config-menu-message-font-size: 1rem;
+  --c-config-menu-message-font-weight: bold;
+  --c-config-menu-message-margin-top: 1.5rem;
+  --c-config-menu-logo-hover-transform: scale(1.1);
+  --c-config-menu-logo-hover-opacity: 0.8;
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--c-config-menu-gap);
+  background-color: var(--c-config-menu-background-color);
+  padding: var(--c-config-menu-padding);
+  border-radius: var(--c-config-menu-border-radius);
+  min-height: var(--c-config-menu-min-height);
+  color: var(--c-config-menu-color);
+
+  * {
+    background-color: var(--c-config-menu-background-color);
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: var(--c-config-menu-header-padding-bottom);
+    border-bottom: 0.1rem solid var(--c-config-menu-header-border-color);
+  }
+
+  &__title {
+    font-size: var(--c-config-menu-title-font-size);
+    font-weight: var(--c-config-menu-title-font-weight);
+    color: var(--c-config-menu-title-color);
+  }
+
+  &__inputs {
+    display: flex;
+    flex-direction: column;
+    gap: var(--c-config-menu-inputs-gap);
+
+    &-group {
+      display: flex;
+      flex-direction: column;
+      gap: var(--c-config-menu-inputs-group-gap);
+
+      label {
+        font-size: var(--c-config-menu-label-font-size);
+        font-weight: var(--c-config-menu-label-font-weight);
+        color: var(--c-config-menu-label-color);
+      }
+
+      select {
+        padding: var(--c-config-menu-select-padding);
+        border: 0.1rem solid var(--c-config-menu-select-border-color);
+        border-radius: var(--c-config-menu-select-border-radius);
+        background-color: var(--c-config-menu-select-background-color);
+        color: var(--c-config-menu-select-color);
+        font-size: var(--c-config-menu-select-font-size);
+
+        &:focus {
+          outline: var(--c-config-menu-select-focus-outline);
+        }
+      }
+
+      button {
+        padding: var(--c-config-menu-button-padding);
+        background-color: var(--c-config-menu-button-background-color);
+        color: var(--c-config-menu-color);
+        border: none;
+        border-radius: var(--c-config-menu-button-border-radius);
+        font-size: var(--c-config-menu-button-font-size);
+        cursor: pointer;
+        transition: background-color 0.3s;
+
+        &:hover {
+          background-color: var(--c-config-menu-button-hover-background-color);
+        }
+
+        &:active {
+          background-color: var(--c-config-menu-button-active-background-color);
+        }
+      }
+    }
+  }
+
+  &__success-message,
+  &__error-message {
+    font-size: var(--c-config-menu-message-font-size);
+    font-weight: var(--c-config-menu-message-font-weight);
+    margin-top: var(--c-config-menu-message-margin-top);
+    text-align: center;
+  }
+
+  &__logo {
+    cursor: pointer;
+    transition:
+      transform 0.3s 0.1s,
+      opacity 0.3s 0.1s;
+
+    &:hover {
+      transform: var(--c-config-menu-logo-hover-transform);
+      opacity: var(--c-config-menu-logo-hover-opacity);
+    }
+  }
+}

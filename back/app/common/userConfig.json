@@ -1,0 +1,29 @@
+{
+    "params": {
+        "q": "",
+        "page": 1,
+        "format": null,
+        "category": "web",
+        "language": "ar-EG",
+        "time_range": null,
+        "safesearch": "2"
+    },
+    "xng_params": {
+        "q": "",
+        "categories": null,
+        "engines": null,
+        "language": null,
+        "page": 1,
+        "time_range": null,
+        "format": null,
+        "results_on_new_tab": 0,
+        "image_proxy": null,
+        "autocomplete": null,
+        "safesearch": null,
+        "theme": "simple",
+        "enabled_plugins": null,
+        "disabled_plugins": null,
+        "enabled_engines": null,
+        "disabled_engines": null
+    }
+}

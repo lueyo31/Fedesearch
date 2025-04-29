@@ -1,0 +1,85 @@
+@use "sass:math";
+
+// Definimos la función calcular-clamp
+@function calcular-clamp($min-value, $max-value, $w-lower, $w-upper, $unit) {
+    // Convertimos todos los valores a píxeles si no lo están ya
+    $min: if(unit($min-value) == "px", $min-value, $min-value * 1px);
+    $max: if(unit($max-value) == "px", $max-value, $max-value * 1px);
+    $lower: if(unit($w-lower) == "px", $w-lower, $w-lower * 1px);
+    $upper: if(unit($w-upper) == "px", $w-upper, $w-upper * 1px);
+
+    // Calculamos pendiente y coeficiente de posición
+    $pendiente: math.div(($max - $min), ($upper - $lower)) * 100;
+    $coeficiente: $min - math.div($pendiente, 100) * $lower;
+
+    // Devolvemos el valor del medio en la unidad especificada
+    @if $unit == "%" or $unit == "vh" or $unit == "vw" {
+        @if $coeficiente > 0 {
+            @return clamp(#{$min-value}, calc(#{$pendiente}#{$unit} + #{abs($coeficiente)}), #{$max-value});
+        } @else {
+            @return clamp(#{$min-value}, calc(#{$pendiente}#{$unit} - #{abs($coeficiente)}), #{$max-value});
+        }
+    } @else {
+        @error "Unidad no soportada: #{$unit}. Use %, vh o vw.";
+    }
+}
+
+@function calcular-valores($pendiente, $coeficiente, $w-lower, $w-upper, $unit) {
+    // Convertimos todos los valores a píxeles si no lo están ya
+    $lower: if(unit($w-lower) == "px", $w-lower, $w-lower * 1px);
+    $upper: if(unit($w-upper) == "px", $w-upper, $w-upper * 1px);
+
+    // Calculamos min-value y max-value
+    $min-value: $coeficiente + math.div($pendiente * $lower, 100);
+    $max-value: $coeficiente + math.div($pendiente * $upper, 100);
+
+    // Devolvemos los valores en un clamp
+    @if $coeficiente > 0 {
+        @return clamp(#{$min-value}, calc(#{$pendiente}#{$unit} + #{abs($coeficiente)}), #{$max-value});
+    } @else {
+        @return clamp(#{$min-value}, calc(#{$pendiente}#{$unit} - #{abs($coeficiente)}), #{$max-value});
+    }
+}
+
+@function calcular-w-limits($min-value, $max-value, $pendiente, $coeficiente, $unit) {
+    // Convertimos todos los valores a píxeles si no lo están ya
+    $min: if(unit($min-value) == "px", $min-value, $min-value * 1px);
+    $max: if(unit($max-value) == "px", $max-value, $max-value * 1px);
+
+    // Calculamos w-lower y w-upper
+    $w-lower: math.div(($min - $coeficiente) * 100, $pendiente);
+    $w-upper: math.div(($max - $coeficiente) * 100, $pendiente);
+
+    // Devolvemos los valores en la unidad especificada
+    @if $unit == "%" or $unit == "vh" or $unit == "vw" {
+        @return ($w-lower / 1px, $w-upper / 1px);
+    } @else {
+        @error "Unidad no soportada: #{$unit}. Use %, vh o vw.";
+    }
+}
+
+// ejemplo de uso
+
+/*
+.c-titulo{
+    font-size: calcular-clamp(100px, 500px, 300px, 800px, "vw");
+}
+
+se traduce a:
+.c-titulo {
+  font-size: clamp(100px, 80vw + -140px, 500px);
+}
+*/
+
+@mixin box-shadow($name) {
+    -webkit-box-shadow: 2px 10px 24px $name;
+    -moz-box-shadow: 2px 10px 24px $name;
+    box-shadow: 2px 10px 24px $name;
+}
+
+@mixin padding($name) {
+    padding-top: $name;
+    padding-bottom: $name;
+    padding-left: $name;
+    padding-right: $name;
+}

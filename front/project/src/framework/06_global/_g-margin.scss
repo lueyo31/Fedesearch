@@ -1,0 +1,75 @@
+.g--margin {
+    @each $key, $value in $margin {
+        &-#{$key} {
+            margin: var(--margin-#{$key});
+        }
+    }
+
+    @each $key, $value in $margin {
+        &-top-#{$key} {
+            margin-top: var(--margin-#{$key});
+        }
+
+        &-bottom-#{$key} {
+            margin-bottom: var(--margin-#{$key});
+        }
+
+        &-right-#{$key} {
+            margin-right: var(--margin-#{$key});
+        }
+
+        &-left-#{$key} {
+            margin-left: var(--margin-#{$key});
+        }
+
+        &-horizontal-#{$key} {
+            margin-right: var(--margin-#{$key});
+            margin-left: var(--margin-#{$key});
+        }
+
+        &-vertical-#{$key} {
+            margin-top: var(--margin-#{$key});
+            margin-bottom: var(--margin-#{$key});
+        }
+    }
+}
+
+@each $breakpoint-key, $breakpoint-value in $breakpoints {
+    @media (min-width: #{$breakpoint-value}) {
+        .g--margin {
+            @each $key, $value in $margin {
+                &-#{$key}#{$separator}#{$breakpoint-key} {
+                    margin: var(--margin-#{$key});
+                }
+            }
+
+            @each $key, $value in $margin {
+                &-top-#{$key}#{$separator}#{$breakpoint-key} {
+                    margin-top: var(--margin-#{$key});
+                }
+
+                &-bottom-#{$key}#{$separator}#{$breakpoint-key} {
+                    margin-bottom: var(--margin-#{$key});
+                }
+
+                &-right-#{$key}#{$separator}#{$breakpoint-key} {
+                    margin-right: var(--margin-#{$key});
+                }
+
+                &-left-#{$key}#{$separator}#{$breakpoint-key} {
+                    margin-left: var(--margin-#{$key});
+                }
+
+                &-horizontal-#{$key}#{$separator}#{$breakpoint-key} {
+                    margin-right: var(--margin-#{$key});
+                    margin-left: var(--margin-#{$key});
+                }
+
+                &-vertical-#{$key}#{$separator}#{$breakpoint-key} {
+                    margin-top: var(--margin-#{$key});
+                    margin-bottom: var(--margin-#{$key});
+                }
+            }
+        }
+    }
+}

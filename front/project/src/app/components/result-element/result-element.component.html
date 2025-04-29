@@ -1,0 +1,43 @@
+@if(result.type.name === "web"){
+<div class="c-result-element">
+  <div class="c-result-element__header">
+    <img [src]="getFaviconUrl(result.linkPage)" alt="Favicon" />
+    <div>
+      <a class="c-result-element__link" [href]="result.link" target="_blank">{{
+        result.title
+        }}</a>
+      <p class="c-result-element__page-link">{{ result.linkPage }}</p>
+    </div>
+  </div>
+  <p class="c-result-element__description">
+    <span class="g--color-alternative-4">({{ result.motor }})</span>  {{ result.description }}
+  </p>
+</div>
+} @else if(result.type.name === "image"){
+<div class="c-result-element--image">
+  <img [src]="result.type.thumbnail" alt="{{ result.title }}" (click)="openImageDialog()"/>
+  <p class="c-result-element__image-title"><a [href]="result.link">{{ result.title }}</a></p>
+</div>
+}
+@else if(result.type.name === "video"){
+<div class="c-result-element--video">
+  <img [src]="result.type.thumbnail" alt="{{ result.title }}" (click)="openVideoDialog()"/>
+  <p class="c-result-element__video-title"> <a href="{{ result.type.embedUrl }}">{{ result.title }}</a></p>
+  <p class="c-result-element__video-description">
+    <span class="g--color-alternative-4">({{ result.motor }})</span>  {{ result.description }} </p>
+</div>
+}
+@else if(result.type.name === "new"){
+<div class="c-result-element--news">
+  @if(result.type.thumbnail) {
+  <img [src]="result.type.thumbnail" alt="{{ result.title }}" />}
+  <div class="c-result-element__news-content">
+    <p class="c-result-element__news-title">
+      <a [href]="result.link">{{ result.title }}</a>
+    </p>
+    <p class="c-result-element__news-description"><img [src]="getFaviconUrl(result.linkPage)" alt="Favicon" />
+     <span class="g--color-alternative-4">({{ result.motor }})</span>  {{ result.description }}
+    </p>
+  </div>
+</div>
+}

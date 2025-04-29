@@ -1,0 +1,281 @@
+$colors: (
+    "primary": (
+        #134403,
+        #1f7307,
+        #249d0c,
+        #28c610,
+        #29ee17,
+        #4df344,
+        #6df86d,
+        #97fc9a,
+        #c4fcd0
+    ),
+    "alternative": (
+        #530d03,
+        #871208,
+        #c0120c,
+        #ef1515,
+        #f4564e,
+        #f88c82,
+        #fcc3ba,
+        #fff3f0,
+        #fffbf9
+    ),
+    "green": (
+        #134403,
+        #1f7307,
+        #249d0c,
+        #28c610,
+        #29ee17,
+        #4df344,
+        #6df86d,
+        #97fc9a,
+        #c4fcd0
+    ),
+    "red": (
+        #530d03,
+        #871208,
+        #c0120c,
+        #ef1515,
+        #f4564e,
+        #f88c82,
+        #fcc3ba,
+        #fff3f0,
+        #fffbf9
+    ),
+    "yellow": (
+        #76350f,
+        #91400d,
+        #b35309,
+        #db7706,
+        #f59f0a,
+        #fbbd23,
+        #fcd44f,
+        #fde68b,
+        #fef3c8
+    ),
+    "purple": (
+        #4d1d95,
+        #5a21b5,
+        #6b26d9,
+        #7c3bed,
+        #895af6,
+        #a689fa,
+        #c3b4fd,
+        #ded7fe,
+        #ebe7fe
+    ),
+    "pink": (
+        #811842,
+        #9b174c,
+        #bf185d,
+        #db2979,
+        #ec4699,
+        #f471b5,
+        #f9a9d5,
+        #fbd0e8,
+        #fce8f4
+    ),
+    "grey": (
+        #111111,
+        #1f1f1f,
+        #373737,
+        #4b4b4b,
+        #6b6b6b,
+        #9c9c9c,
+        #d1d1d1,
+        #e5e5e5,
+        #f3f3f3
+    ),
+    "black": (
+        #000000,
+        #0a0a0a,
+        #141414,
+        #1e1e1e,
+        #282828,
+        #323232,
+        #3c3c3c,
+        #3f3f3f,
+        #444444
+    ),
+    "white": (
+        #c0c0c0,
+        #c8c8c8,
+        #d0d0d0,
+        #d8d8d8,
+        #e0e0e0,
+        #e8e8e8,
+        #f0f0f0,
+        #f8f8f8,
+        #ffffff
+    )
+);
+
+$separator: "\\@";
+
+$breakpoints: (
+    "mobile": 576px,
+    "tablet": 768px,
+    "desktop": 992px,
+    "fulldesktop": 1200px
+);
+
+$font-size: (
+    "xs": "10px",
+    "s": "14px",
+    "": "16px",
+    "m": "20px",
+    "l": "24px",
+    "xl": "32px",
+    "xxl": "42px",
+    "xxxl": "48px"
+);
+
+$gaps:$font-size;
+
+$padding: (
+    "1": 2px,
+    "2": 4px,
+    "3": 6px,
+    "4": 8px,
+    "5": 10px,
+    "6": 14px,
+    "7": 20px,
+    "8": 24px,
+    "9": 36px,
+    "10": 48px
+);
+$margin: $padding;
+
+$height: (
+    "10": 10px,
+    "20": 20px,
+    "30": 30px,
+    "40": 40px,
+    "50": 50px,
+    "100": 100px,
+    "150": 150px,
+    "200": 200px,
+    "250": 250px,
+    "300": 300px,
+    "350": 350px,
+    "400": 400px,
+    "450": 450px,
+    "500": 500px,
+    "550": 550px,
+    "600": 600px,
+    "650": 650px,
+    "700": 700px,
+    "750": 750px,
+    "800": 800px,
+    "850": 850px,
+    "900": 900px,
+    "950": 950px,
+    "1000": 1000px,
+
+    // Valores en porcentajes de 5 en 5
+    "5pc": 5%,
+    "10pc": 10%,
+    "15pc": 15%,
+    "20pc": 20%,
+    "25pc": 25%,
+    "30pc": 30%,
+    "35pc": 35%,
+    "40pc": 40%,
+    "45pc": 45%,
+    "50pc": 50%,
+    "55pc": 55%,
+    "60pc": 60%,
+    "65pc": 65%,
+    "70pc": 70%,
+    "75pc": 75%,
+    "80pc": 80%,
+    "85pc": 85%,
+    "90pc": 90%,
+    "95pc": 95%,
+    "100pc": 100%
+);
+
+$width: $height;
+
+$border: (
+    "1": 1px,
+    "2": 2px,
+    "3": 4px,
+    "4": 6px,
+    "5": 10px
+);
+
+$shadow: (
+    "0": unquote("none"),
+    "1": unquote("0 0 0 1px rgba(0, 0, 0, 0.05)"),
+    "2": unquote("0 1px 2px 0 rgba(0, 0, 0, 0.05)"),
+    "3": unquote("0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)"),
+    "4": unquote("0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)"),
+    "5": unquote("0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)"),
+    "6": unquote("0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"),
+    "7": unquote("0 25px 50px -12px rgba(0, 0, 0, 0.25)"),
+    "inset": unquote("inset -3px -3px 7px #ffffffb0, inset 3px 3px 5px rgba(94, 104, 121, 0.692)")
+);
+
+$fonts: (
+    "arial" : "'Arial, sans-serif'",
+    "verdana" : "'Verdana, sans-serif'",
+    "tahoma" : "'Tahoma, sans-serif'",
+    "trebuchet" : "'Trebuchet MS, sans-serif'",
+    "timesNewRoman" : "'Times New Roman, serif'",
+    "georgia" : "'Georgia, serif'",
+    "garamond" : "'Garamond, serif'",
+    "courier" : "'Courier New, monospace'",
+    "brushScript" : "'Brush Script MT, cursive'"
+);
+
+$border-style: (
+    "dotted",
+    "dashed",
+    "solid",
+    "double",
+    "none",
+    "hidden"
+);
+
+$text-align: (
+    "left",
+    "center",
+    "right"
+);
+$text-decoration: (
+    "none": "none",
+    "crossed": "line-through"
+);
+$background: (
+    "none": "none"
+);
+$position: (
+    "absolute",
+    "relative"
+);
+
+$border-radius: (
+    "0" : "0px",
+    "1" : "5px",
+    "2" : "8px",
+    "3" : "12px"
+);
+
+$position-move: (
+    10: 10px,
+    20: 20px,
+    30: 30px,
+    40: 40px,
+    50: 50px,
+    60: 60px,
+    70: 70px,
+    80: 80px,
+    90: 90px,
+    100: 100px,
+    200: 200px,
+    300: 300px,
+    400: 400px
+);
+

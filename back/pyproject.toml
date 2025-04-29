@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "back"
+version = "0.1.0"
+description = "backend of final project"
+authors = ["Lueyo-clase <84575656+lueyo@users.noreply.github.com>"]
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.12"
+fastapi = {extras = ["standard"], version = "^0.115.12"}
+requests = "^2.32.3"
+bs4 = "^0.0.2"
+pydantic = "^2.10.6"
+brotli = "^1.1.0"
+python-dotenv = "^1.0.1"
+pytest = "^8.3.5"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
